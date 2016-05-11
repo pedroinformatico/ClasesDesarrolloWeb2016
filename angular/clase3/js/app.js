@@ -10,8 +10,10 @@ var app = angular.module('app',
 app.config(['$routeProvider', function ($routeProvider) {
         $routeProvider
                 // Home
-                .when("/", {templateUrl: "templateUrl", controller: "controlador"})
+                .when("/", {templateUrl: "views/home.html", controller: "homeController"})
+                .when("/home", {templateUrl: "views/home.html", controller: "homeController"})
+                .when("/info", {templateUrl: "views/info.html", controller: "infoController"})
 
                 // else 404
-                .otherwise("/", {templateUrl: "views/modules/vehicles.html", controller: "VehiclesController"});
+                .otherwise("/", {templateUrl: "views/home.html", controller: "homeController"});
     }]);

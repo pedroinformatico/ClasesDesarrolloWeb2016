@@ -1,7 +1,5 @@
-/**
- * controller de vehicles
- */
-app.controller('myController', ['$scope', function ($scope) {
+app.controller('homeController', ['$scope', '$rootScope', function ($scope, $rootScope) {
+        $scope.$parent.curPage = "home";
         $scope.newUser = {
             user: "",
             name: "",
@@ -21,6 +19,8 @@ app.controller('myController', ['$scope', function ($scope) {
         $scope.tempUsers = [];
 
         $scope.addNewUser = function (user) {
+            debugger;
+
             $scope.users.push(angular.extend({}, user));
         };
 

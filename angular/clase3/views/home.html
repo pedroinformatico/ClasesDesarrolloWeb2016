@@ -1,0 +1,65 @@
+
+<div class="row">
+    <div class="col-md-4 form-group">
+        <label for="nombre">Usuario:</label>
+        <input ng-model="newUser.user" type="text" class="form-control" id="usuario" placeholder="Usuario">
+    </div>
+    <div class="col-md-4 form-group">
+        <label for="apellido">Nombre:</label>
+        <input ng-model="newUser.name" type="text" class="form-control" id="nombre" placeholder="Nombre">
+    </div>
+    <div class="col-md-4 form-group">
+        <label for="exampleInputEmail1">Apellido</label>
+        <input ng-model="newUser.lastName" type="text" class="form-control" id="apellido" placeholder="Apellido">
+    </div>
+    <div class="col-md-4">
+        <button ng-click="addNewUser(newUser)" type="button" class="btn btn-primary">Agredar</button>
+
+        <!--                    <button ng-click="post()" id="post" type="button" class="btn btn-primary">post</button>
+                            <button ng-click="get()" id="get" type="button" class="btn btn-primary">get</button>-->
+    </div>
+    <!--                {{newUser}}-->
+</div>
+<div class="row">
+    <table class="table super-tabla" >
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in users" ng-click="showDetails(user)">
+                <td >{{user.user}}</td>
+                <td >{{user.name}}</td>
+                <td >{{user.lastName}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="col-md-4 form-group">
+        <label >Filtrar</label>
+        <input ng-model="searchText" type="text" class="form-control"  placeholder="filtrar">
+        {{filter}}
+    </div>
+    <!--                <nav>
+                        <ul class="pagination">
+                            <li>
+                                <a class="prev" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a class="next" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>-->
+</div>
+
