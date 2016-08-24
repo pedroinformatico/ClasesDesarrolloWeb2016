@@ -6,5 +6,20 @@
  */
 
 module.exports = {
+    login: function (req, res) {
+//TODO: poner toda la logica para registrarnos
+        req.session.authenticated = true;
+        return res.view('homepage');
+    },
+    logout: function (req, res) {
+//TODO: poner toda la logica para registrarnos
+        req.session.authenticated = false;
+        return res.view('homepage');
+    },
+    mostrarTodo: function (req, res) {
+//TODO: poner toda la logica para registrarnos
+        req.session.authenticated = false;
+        return res.view('homepage');
+    },
 };
 

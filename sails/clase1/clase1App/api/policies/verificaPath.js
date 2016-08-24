@@ -11,14 +11,15 @@ module.exports = function (req, res, next) {
 
     // User is allowed, proceed to the next policy, 
     // or if this is the last policy, the controller
-    sails.log("sessionAuth");
-    if (req.session.authenticated) {
+    sails.log("verificaPath");
+    if ("/sueldo/descripcion" === req.path) {
         sails.log("paso");
         return next();
     }
     sails.log("no paso");
-
     // User is not allowed
     // (default res.forbidden() behavior can be overridden in `config/403.js`)
-    return res.forbidden('You are not permitted to perform this action.');
+    return res.json({
+        error: 'path invalida'
+    });
 };
